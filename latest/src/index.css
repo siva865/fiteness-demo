@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --bg: #0f2421;
+  --surface: #1a2e2b;
+  --surface-light: #203936;
+  --lime: #eafb7b;
+  --text: #f4f4ee;
+  --muted: #c5cfc8;
+  --teal: #7fb5a4;
+  --border: rgba(140, 200, 180, 0.25);
+  --nav: rgba(215, 222, 212, 0.9);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Sora", sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--bg);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.font-display {
+  font-family: "Urbanist", sans-serif;
+}
+
+.glow-lime {
+  box-shadow: 0 0 30px rgba(234, 251, 123, 0.18);
+}
+
+.lime-button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.lime-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(234, 251, 123, 0.4);
+}
+
+.glass {
+  background: rgba(26, 46, 43, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.flight-path {
+  animation: dash 25s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
